@@ -96,7 +96,6 @@ export class AppComponent {
     // Onsubmit updating the field values 
     onSubmit() {
       this.submitted = true;
-      console.log("this.myForm.valid", this.myForm);
       if (this.myForm.valid) {
         const formValues = this.myForm.value;
         
@@ -108,7 +107,7 @@ export class AppComponent {
         // check the console for the updates form defination
         console.log(this.formData);
       } else {
-        console.log("Something went wrong", this.myForm.valid);
+        console.log("Something went wrong");
         setTimeout(()=>{
           this.submitted = false;
         }, 2000)
