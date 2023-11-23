@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    background: #f2f2f2 !important;
+    padding: 0;
+    margin: 0;
+}
+.mt-30{margin-top: 30px;}
+.btn-primary{
+    color: #fff;
+    background-color: #337ab7 !important;
+    border-color: #2e6da4 !important;
+}
+label {
+    margin-bottom: 5px;text-transform: capitalize;
+}
+.form-group{margin-bottom: 10px;}
+ul{list-style: none;}
+li:first-child{font-size: 16px; font-weight: 500;color: #2f9700;}

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-3 mt-30 card">
+      <h5 class="card-header">Angular Reactive Form Validation</h5>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="card-body">
+        <div *ngFor="let field of sortedFields">
+          
+          <div *ngIf="isFieldVisible(field.name)" class="form-group">
+            <label for="{{field.name}}">{{field.name}}</label>
+            <input class="form-control"
+              type="{{field.dataType}}" 
+              *ngIf="myForm.get(field.name)"
+              [formControlName]="field.name"
+              [id]="field.name"
+              [placeholder]="'Enter ' + field.name"
+              [class.is-invalid]="myForm.controls[field.name].status == 'INVALID'"
+            >
+            <div *ngIf="myForm.controls[field.name].status == 'INVALID'" class="invalid-feedback">
+              {{field.name}} is required.
+            </div>
+            
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <ul *ngIf="submitted && myForm.valid">
+        <li>The form was submitted successfully.</li>
+        <li *ngFor="let data of formData.fields">
+          <b>{{data.name}}</b> : {{data.value}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
